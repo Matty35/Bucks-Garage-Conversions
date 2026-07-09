@@ -38,4 +38,19 @@
   if (year) {
     year.textContent = String(new Date().getFullYear());
   }
+
+  /* Scrollable tables: add a visible swipe affordance, drop it at scroll end */
+  document.querySelectorAll(".table-wrap").forEach(function (wrap) {
+    function update() {
+      var scrollable = wrap.scrollWidth > wrap.clientWidth + 1;
+      wrap.classList.toggle("is-scrollable", scrollable);
+      var atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 1;
+      wrap.classList.toggle("is-scrolled-end", scrollable && atEnd);
+    }
+    update();
+    /* the stylesheet loads async, so re-check once everything has arrived */
+    window.addEventListener("load", update);
+    wrap.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+  });
 })();
