@@ -280,7 +280,7 @@ td.figure,
 
 /* ---- Hero ---- */
 .hero { padding-block: 4rem 3.5rem; }
-.hero h1 { max-width: 18ch; }
+.hero h1 { max-width: 24ch; }
 .hero .lede { max-width: 52ch; }
 
 .trust-strip {
@@ -340,6 +340,49 @@ td.figure,
 .transformation-pane--before .pane-label { color: var(--steel); }
 .transformation-pane--after .pane-label { color: var(--oak-dark); }
 .transformation-pane--before { border-bottom: 2px dashed var(--steel); }
+
+/* ---- Use strip: uses + honest cost bands, mono figures with dashed leaders ---- */
+.use-strip {
+  list-style: none;
+  padding: 0;
+  margin: 1.75rem 0 0;
+  max-width: 46rem;
+}
+.use-strip li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px dashed var(--line);
+  margin: 0;
+}
+.use-strip li:first-child { border-top: 1px dashed var(--line); }
+.use-strip .use-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.use-strip .use-note {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  display: none;
+}
+.use-strip .use-leader {
+  flex: 1;
+  min-width: 2rem;
+  border-bottom: 1px dashed var(--line);
+  transform: translateY(-4px);
+}
+.use-strip .use-cost {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--oak-dark);
+  white-space: nowrap;
+}
+@media (min-width: 768px) {
+  .use-strip .use-note { display: inline; }
+}
 
 /* ---- Cards ---- */
 .card-grid {
@@ -661,13 +704,13 @@ textarea { min-height: 8rem; resize: vertical; }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 2fr 1fr 1fr 1.2fr; }
   .trust-strip { grid-template-columns: repeat(4, 1fr); }
+  .trust-strip--3 { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (min-width: 1100px) {
   .card-grid { grid-template-columns: repeat(4, 1fr); }
   .card-grid--3 { grid-template-columns: repeat(3, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
-  .hero h1 { max-width: 16ch; }
 }
 
 /* Cards: 3-up variant stays 2-up until wide */
