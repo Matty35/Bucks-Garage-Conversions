@@ -9,8 +9,9 @@
 :root {
   --charcoal: #33312E;
   --linen: #F8F6F2;
-  --oak: #A6763C;
-  --oak-dark: #8A6132;
+  --oak: #A6763C;        /* decorative accents only — fails 4.5:1 as text on light bg */
+  --oak-dark: #845D30;   /* text-safe oak: >=4.5:1 on linen, plaster and white */
+  --oak-deep: #6F4E28;
   --steel: #47617A;
   --plaster: #ECE8E1;
 
@@ -190,7 +191,7 @@ td.figure,
   align-items: center;
   min-height: var(--tap);
 }
-.brand .brand-mark { color: var(--oak); }
+.brand .brand-mark { color: var(--oak-dark); }
 
 .nav-toggle {
   display: inline-flex;
@@ -262,11 +263,11 @@ td.figure,
   transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
 }
 .btn-primary {
-  background: var(--oak);
+  background: var(--oak-dark);
   color: #FFFDF9;
-  border-color: var(--oak);
+  border-color: var(--oak-dark);
 }
-.btn-primary:hover { background: var(--oak-dark); border-color: var(--oak-dark); color: #FFFDF9; }
+.btn-primary:hover { background: var(--oak-deep); border-color: var(--oak-deep); color: #FFFDF9; }
 .btn-ghost {
   background: transparent;
   color: var(--charcoal);
@@ -612,7 +613,8 @@ textarea { min-height: 8rem; resize: vertical; }
   margin-top: 3.5rem;
   font-size: 0.95rem;
 }
-.site-footer h4 {
+.site-footer h4,
+.site-footer .footer-heading {
   color: var(--linen);
   font-size: 0.9rem;
   letter-spacing: 0.08em;
@@ -636,7 +638,7 @@ textarea { min-height: 8rem; resize: vertical; }
   padding-top: 1.25rem;
   border-top: 1px dashed #55524C;
   font-size: 0.85rem;
-  color: #9B968C;
+  color: #ABA69C;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 2rem;
@@ -649,7 +651,7 @@ textarea { min-height: 8rem; resize: vertical; }
   font-size: 1.05rem;
   margin-bottom: 0.75rem;
 }
-.footer-brand .brand-mark { color: var(--oak); }
+.footer-brand .brand-mark { color: #CE9A5B; }
 
 /* ---- Page intro (inner pages) ---- */
 .page-intro { padding-block: 3.25rem 2.5rem; }
