@@ -169,7 +169,7 @@ Fixes applied in this pass:
 
 ## Outstanding TODOs (blocked on tenant input)
 
-- Real phone number and street address/postcode — placeholders are marked `TODO` in footers, `tel:` links and homepage JSON-LD.
+- Street address/postcode — placeholders remain marked `TODO` in homepage JSON-LD (footers show town only). Phone number is now real: `01296 924042` in all tel: links and schema.
 - Review schema — commented template on the homepage; do not enable until genuine on-site reviews exist.
 - Social share image (`og:image`) — pending brand photography.
 - Contact form backend — `action="#"` placeholder needs wiring to a form handler at deploy time.

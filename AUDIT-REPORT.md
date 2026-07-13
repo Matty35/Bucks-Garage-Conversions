@@ -51,7 +51,7 @@ Pass 3 = **zero failures across all 16 checks**. Audit loop closed.
 
 The site is structurally, technically and editorially complete. Five things need real-world input before or at launch:
 
-1. **Phone number** — `01296 000 000` is a placeholder in tel: links (hero, CTA bands, footers) and the homepage LocalBusiness JSON-LD. One find-and-replace across the repo when the real number exists.
+1. ~~Phone number~~ — **done**: `01296 924042` is live in all tel: links, visible text and the homepage LocalBusiness JSON-LD.
 2. **NAP: street address & postcode** — footers currently show "Aylesbury, Buckinghamshire" only; the JSON-LD address fields are marked `TODO:`. Fill both when the registered address is settled, keeping the wording identical everywhere (see entity-consistency note in TECHNICAL-CHECKLIST.md).
 3. **Contact form endpoint** — the form posts to `action="#"`. Wire to Netlify Forms / Formspree / a mail handler at deploy; the fields and labels are ready.
 4. **Real photography** — the site ships zero images by design. When before/after job photos exist: WebP, explicit width/height, `loading="lazy"` below the fold, and add an `og:image` (1200×630) — slots documented in TECHNICAL-CHECKLIST.md.
