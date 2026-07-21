@@ -1,0 +1,11 @@
+# =========================================================================
+# Our Work gallery — one photo per line:   filename | caption
+#
+# 1. Upload the photo to this images folder (Add file -> Upload files)
+# 2. Add a line below for it. Example (remove the # to make it live):
+#
+# kingsbrook-office-after.jpg | Finished home office conversion on Kingsbrook
+#
+# Lines starting with # are ignored. Full instructions: see README.md
+# in this folder. Photos appear on /our-work.html in this order.
+# =========================================================================

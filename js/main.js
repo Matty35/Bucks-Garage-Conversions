@@ -39,6 +39,51 @@
     year.textContent = String(new Date().getFullYear());
   }
 
+  /* Our Work gallery: render photos listed in /images/photos.txt.
+     Format: one per line, "filename | caption". Lines starting # ignored.
+     Editable through the GitHub website — see images/README.md. */
+  var gallery = document.getElementById("photo-gallery");
+  if (gallery) {
+    fetch("/images/photos.txt")
+      .then(function (r) { return r.ok ? r.text() : ""; })
+      .then(function (text) {
+        var photos = text.split("\n")
+          .map(function (line) { return line.trim(); })
+          .filter(function (line) { return line && line.charAt(0) !== "#" && line.indexOf("|") > 0; })
+          .map(function (line) {
+            var i = line.indexOf("|");
+            return { file: line.slice(0, i).trim(), caption: line.slice(i + 1).trim() };
+          })
+          .filter(function (p) { return p.file && p.caption; });
+        if (!photos.length) return; /* keep the "photos coming soon" message */
+        gallery.innerHTML = "";
+        photos.forEach(function (p) {
+          var fig = document.createElement("figure");
+          var img = document.createElement("img");
+          img.src = "/images/" + p.file;
+          img.alt = p.caption;
+          img.loading = "lazy";
+          img.decoding = "async";
+          img.addEventListener("error", function () { fig.remove(); });
+          var cap = document.createElement("figcaption");
+          /* bold a leading "Before:" / "After:" label if the caption has one */
+          var m = p.caption.match(/^(Before|After):\s*(.*)$/i);
+          if (m) {
+            var strong = document.createElement("strong");
+            strong.textContent = m[1] + ": ";
+            cap.appendChild(strong);
+            cap.appendChild(document.createTextNode(m[2]));
+          } else {
+            cap.textContent = p.caption;
+          }
+          fig.appendChild(img);
+          fig.appendChild(cap);
+          gallery.appendChild(fig);
+        });
+      })
+      .catch(function () { /* leave the fallback message in place */ });
+  }
+
   /* Scrollable tables: add a visible swipe affordance, drop it at scroll end */
   document.querySelectorAll(".table-wrap").forEach(function (wrap) {
     function update() {
