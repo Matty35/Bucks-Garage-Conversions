@@ -9,3 +9,10 @@
 # Lines starting with # are ignored. Full instructions: see README.md
 # in this folder. Photos appear on /our-work.html in this order.
 # =========================================================================
+during-build-infill-wall.jpg | During the build: garage door out, insulated infill wall going up under the existing roof
+living-room-media-wall.jpg | Garage converted to a living room — feature media wall, new window where the door was
+home-office-l-shaped-desk.jpg | Finished home office conversion with an L-shaped desk and floating shelves
+two-desk-home-office.jpg | Two-desk home office conversion for a couple who both work from home
+bedroom-garden-doors.jpg | Guest bedroom conversion with doors opening onto the garden
+guest-bedroom-conversion.jpg | Finished guest bedroom conversion with space for a sofa and TV
+study-bay-window.jpg | Study and snug conversion with the desk set into the new window
